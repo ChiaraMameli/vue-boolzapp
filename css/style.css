@@ -1,5 +1,4 @@
 /* GENERICS */
-
 :root {
     /* colours */
     --green: #409689;
@@ -12,16 +11,21 @@
     --beige: #F3EEEA;
     /* measures */
     --smallest: 1rem;
+    --icon-size: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
 }
 
 /* LAYOUT (STRUCTURE) */
 #top-background {
-    height: 15vh;
+    height: 13vh;
     background-color: var(--green);
 }
 
 #bottom-background {
-    height: 85vh;
+    height: 87vh;
     background-color: var(--grey);
 }
 
@@ -42,15 +46,54 @@
     border-right: 1px solid var(--dark-grey);
 }
 
+#sidebar figcaption h3 {
+    line-height: 4vh;
+}
+
+/** SIDEBAR NOTIFICATIONS  */
+
 #sidebar #notifications {
     height: 10vh;
     background-color: var(--light-blue);
+    padding: var(--smallest);
 }
+
+#sidebar #notifications i {
+    font-size: var(--icon-size);
+    color: var(--light-blue);
+    line-height: 3rem;
+}
+
+.rounded-icon {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #fff;
+
+    margin-right: var(--smallest);
+}
+
+#sidebar #notifications h5 {
+    font-size: var(--smallest);
+    margin: 0;
+}
+
+#sidebar #notifications span {
+    font-size: 0.8rem;
+    color: var(--darker-grey);
+    text-decoration: underline;
+}
+
+/** SIDEBAR SEARCH MY CONTACTS */
 
 #search-my-contacts {
     height: 5vh;
     background-color: var(--lighter-grey);
+    padding: var(--smallest);
 }
+
+/** SIDEBAR MY CONTACTS LIST BOX */
+
 
 #my-contacts-list-box {
     height: 65vh;
@@ -73,17 +116,21 @@
 }
 
 /** RIGHT SECTION HEADER */
-#right-section figure {
+
+#right-section figure,
+#sidebar figure {
     padding: 0.5rem;
 }
 
-#right-section figcaption {
+#right-section figcaption,
+#sidebar figcaption {
     margin-left: var(--smallest);
     padding-top: var(--smallest) ;
 }
 
 
-#right-section figcaption h3 {
+#right-section figcaption h3,
+#sidebar figcaption h3 {
     font-size: var(--smallest);
     margin: 0;
 }
@@ -92,9 +139,10 @@
     color: var(--dark-grey);
 }
 
-#right-section header i {
+#right-section header i,
+#sidebar header i {
     color: var(--dark-grey);
-    font-size: 1.5rem;
+    font-size: var(--icon-size);
     line-height: 10vh;
     margin-right: var(--smallest);
 }
@@ -112,13 +160,14 @@ main{
     background-color: var(--beige);
 }
 
-#right-section footer i{
+#right-section footer i {
     color: var(--darker-grey);
-    font-size: 1.5rem;
+    font-size: var(--icon-size);
     line-height: 6vh;
 }
 
-#right-section footer input {
+#right-section footer input,
+#sidebar #search-my-contacts input {
     border: 0;
     margin: 0 var(--smallest);
     padding: var(--smallest);

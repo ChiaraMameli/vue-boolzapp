@@ -19,11 +19,52 @@
     <div id="bottom-background"></div>
     <div id="main-content" class="position-absolute top-50 start-50 translate-middle d-flex">
         <section id="sidebar">
-            <header></header>
-            <div id="notifications"></div>
+            <header class="d-flex justify-content-between">
+                <div>
+                    <figure class="d-flex">
+                        <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
+                        <figcaption>
+                            <h3>Ciccio</h3>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+
+            </header>
+
+            <div id="notifications" class="d-flex">
+                <div class="rounded-icon text-center">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div>
+                   <h5>Ricevi notifiche di nuovi messaggi</h5>
+                   <span>Attiva notifiche desktop</span>
+                </div>
+            </div>
+
             <section>
-                <div id="search-my-contacts"></div>
-                <div id="my-contacts-list-box"></div>
+                <div id="search-my-contacts" class="d-flex">
+                    <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                    <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                
+                <div id="my-contacts-list-box">
+                    <ul>
+                        <li>
+                            <figure class="d-flex">
+                                <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
+                                <figcaption>
+                                    <h3>Ciccio</h3>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+
+                </div>
             </section>
         </section>
         <section id="right-section">
