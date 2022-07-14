@@ -1,0 +1,23 @@
+/* GENERICS */
+
+:root {
+    --green: #409689;
+    --grey: #DCDBD3;
+}
+
+/* LAYOUT (STRUCTURE) */
+#top-background {
+    height: 15vh;
+    background-color: var(--green);
+}
+
+#bottom-background {
+    height: 85vh;
+    background-color: var(--grey);
+}
+
+#main-content{
+    width: 80vw;
+    height: 90vh;
+    background-color: red;
+}
