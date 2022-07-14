@@ -15,82 +15,84 @@
     <title>Document</title>
 </head>
 <body class="position-relative">
-    <div id="top-background"></div>
-    <div id="bottom-background"></div>
-    <div id="main-content" class="position-absolute top-50 start-50 translate-middle d-flex">
-        <section id="sidebar">
-            <header class="d-flex justify-content-between">
-                <div>
-                    <figure class="d-flex">
-                        <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
-                        <figcaption>
-                            <h3>Ciccio</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
-                    <a href="#"><i class="fa-solid fa-message"></i></a>
-                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+    <div id="root">
+        <div id="top-background"></div>
+        <div id="bottom-background"></div>
+        <div id="main-content" class="position-absolute top-50 start-50 translate-middle d-flex">
+            <section id="sidebar">
+                <header class="d-flex justify-content-between">
+                    <div>
+                        <figure class="d-flex">
+                            <img :src="user.profilePic" alt="user profile pic" class="rounded-pic">
+                            <figcaption>
+                                <h3>{{user.firstName}} {{user.lastName}}</h3>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                        <a href="#"><i class="fa-solid fa-message"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </div>
+
+                </header>
+
+                <div id="notifications" class="d-flex">
+                    <div class="rounded-icon text-center">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                    <span>Attiva notifiche desktop</span>
+                    </div>
                 </div>
 
-            </header>
+                <section>
+                    <div id="search-my-contacts" class="d-flex">
+                        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
 
-            <div id="notifications" class="d-flex">
-                <div class="rounded-icon text-center">
-                    <i class="fa-solid fa-bell-slash"></i>
-                </div>
-                <div>
-                   <h5>Ricevi notifiche di nuovi messaggi</h5>
-                   <span>Attiva notifiche desktop</span>
-                </div>
-            </div>
+                    <div id="my-contacts-list-box">
+                        <ul>
+                            <li v-for="contact in contacts">
+                                <figure class="d-flex">
+                                    <img :src="contact.profilePic" alt="contact.name" class="rounded-pic">
+                                    <figcaption>
+                                        <h3>{{contact.name}}</h3>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>
 
-            <section>
-                <div id="search-my-contacts" class="d-flex">
-                    <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                    <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-                
-                <div id="my-contacts-list-box">
-                    <ul>
-                        <li>
-                            <figure class="d-flex">
-                                <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
-                                <figcaption>
-                                    <h3>Ciccio</h3>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-
-                </div>
+                    </div>
+                </section>
             </section>
-        </section>
-        <section id="right-section">
-            <header class="d-flex justify-content-between">
-                <div>
-                    <figure class="d-flex">
-                        <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
-                        <figcaption>
-                            <h3>Ciccio</h3>
-                            <span>ciao</span>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div>
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#"><i class="fa-solid fa-paperclip"></i></a>
-                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                </div>
-            </header>
-            <main></main>
-            <footer class="d-flex">
-                <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-                <input type="text" placeholder="Scrivi un messaggio...">
-                <a href="#"><i class="fa-solid fa-microphone"></i></a>
-            </footer>
-        </section>
+            <section id="right-section">
+                <header class="d-flex justify-content-between">
+                    <div>
+                        <figure class="d-flex">
+                            <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
+                            <figcaption>
+                                <h3>Ciccio</h3>
+                                <span>ciao</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+                        <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </div>
+                </header>
+                <main></main>
+                <footer class="d-flex">
+                    <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                    <input type="text" placeholder="Scrivi un messaggio...">
+                    <a href="#"><i class="fa-solid fa-microphone"></i></a>
+                </footer>
+            </section>
+        </div>
     </div>
     <!-- JS -->
 <script src="js/script.js"></script>
