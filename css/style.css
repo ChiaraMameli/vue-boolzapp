@@ -1,12 +1,17 @@
 /* GENERICS */
 
 :root {
+    /* colours */
     --green: #409689;
+    --darker-grey: #757985;
     --dark-grey: #B1B1B1;
     --grey: #DCDBD3;
     --light-grey: #EAEAEA;
     --lighter-grey: #FAFAFA;
     --light-blue: #8EDAFA;
+    --beige: #F3EEEA;
+    /* measures */
+    --smallest: 1rem;
 }
 
 /* LAYOUT (STRUCTURE) */
@@ -30,6 +35,8 @@
     width: calc((100% / 3));
     height: 100%;
 }
+
+/** SIDEBAR HEADER  */
 
 #sidebar header {
     border-right: 1px solid var(--dark-grey);
@@ -65,10 +72,63 @@
     background-color: var(--light-grey);
 }
 
+/** RIGHT SECTION HEADER */
+#right-section figure {
+    padding: 0.5rem;
+}
+
+#right-section figcaption {
+    margin-left: var(--smallest);
+    padding-top: var(--smallest) ;
+}
+
+
+#right-section figcaption h3 {
+    font-size: var(--smallest);
+    margin: 0;
+}
+
+#right-section figcaption span {
+    color: var(--dark-grey);
+}
+
+#right-section header i {
+    color: var(--dark-grey);
+    font-size: 1.5rem;
+    line-height: 10vh;
+    margin-right: var(--smallest);
+}
+
 main{
     height: calc(100% - 20vh);
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
 }
 
+/** RIGHT SECTION FOOTER */
 
+#right-section footer{
+    padding: var(--smallest);
+    background-color: var(--beige);
+}
+
+#right-section footer i{
+    color: var(--darker-grey);
+    font-size: 1.5rem;
+    line-height: 6vh;
+}
+
+#right-section footer input {
+    border: 0;
+    margin: 0 var(--smallest);
+    padding: var(--smallest);
+    border-radius: 0.3rem;
+    flex-grow: 1;
+}
+
+/* CONTACTS GENERIC FEATURES */
+
+.rounded-pic {
+    height: 8vh;
+    border-radius: 50%;
+}
