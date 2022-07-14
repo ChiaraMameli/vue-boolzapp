@@ -2,7 +2,11 @@
 
 :root {
     --green: #409689;
+    --dark-grey: #B1B1B1;
     --grey: #DCDBD3;
+    --light-grey: #EAEAEA;
+    --lighter-grey: #FAFAFA;
+    --light-blue: #8EDAFA;
 }
 
 /* LAYOUT (STRUCTURE) */
@@ -19,5 +23,52 @@
 #main-content{
     width: 80vw;
     height: 90vh;
-    background-color: red;
 }
+
+/* SIDEBAR */
+#sidebar{
+    width: calc((100% / 3));
+    height: 100%;
+}
+
+#sidebar header {
+    border-right: 1px solid var(--dark-grey);
+}
+
+#sidebar #notifications {
+    height: 10vh;
+    background-color: var(--light-blue);
+}
+
+#search-my-contacts {
+    height: 5vh;
+    background-color: var(--lighter-grey);
+}
+
+#my-contacts-list-box {
+    height: 65vh;
+    background-color: #FFF;
+    overflow-y: scroll;
+}
+
+/* RIGHT SECTION */
+#right-section {
+    height: 100%;
+    width: calc((100% / 3) * 2);
+    background-color: blue;
+}
+
+#right-section header,
+#right-section footer,
+#sidebar header {
+    height: 10vh;
+    background-color: var(--light-grey);
+}
+
+main{
+    height: calc(100% - 20vh);
+    background-image: url("../img/mine.jpg");
+    overflow-y: scroll;
+}
+
+
