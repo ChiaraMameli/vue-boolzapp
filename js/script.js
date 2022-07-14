@@ -15,32 +15,46 @@ const root = new Vue({
                 name:'Giovanni',
                 profilePic: 'img/avatar_2.jpg',
             },
-            {
-                name:'Papà',
-                profilePic: 'img/avatar_3.jpg',
-            },
-            {
-                name:'Proprietario Casa',
-                profilePic: 'img/avatar_4.jpg',
-            },
-            {
-                name:'Fabio',
-                profilePic: 'img/avatar_5.jpg',
-            },
+            // {
+            //     name:'Papà',
+            //     profilePic: 'img/avatar_3.jpg',
+            // },
+            // {
+            //     name:'Proprietario Casa',
+            //     profilePic: 'img/avatar_4.jpg',
+            // },
+            // {
+            //     name:'Fabio',
+            //     profilePic: 'img/avatar_5.jpg',
+            // },
             
-            {
-                name:'Stefania',
-                profilePic: 'img/avatar_6.jpg',
-            },
+            // {
+            //     name:'Stefania',
+            //     profilePic: 'img/avatar_6.jpg',
+            // },
             
-            {
-                name:'Michele',
-                profilePic: 'img/avatar_7.jpg',
-            },
+            // {
+            //     name:'Michele',
+            //     profilePic: 'img/avatar_7.jpg',
+            // },
             
+            // {
+            //     name:'Luciano',
+            //     profilePic: 'img/avatar_8.jpg',
+            // }
+        ],
+        messages: [
             {
-                name:'Luciano',
-                profilePic: 'img/avatar_8.jpg',
+                text: 'ciao',
+                send: false,
+            },
+            {
+                text: 'ciao, tutto bene?',
+                send: true,
+            },
+            {
+                text: 'tutto ok',
+                send: false,
             }
         ]
     }

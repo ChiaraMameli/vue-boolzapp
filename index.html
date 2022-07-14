@@ -85,7 +85,13 @@
                         <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </header>
-                <main></main>
+                <main>
+
+                    <div v-for="message in messages">
+                        <div v-if="(!message.send)" class="message message-received">{{message.text}}</div>
+                        <div v-else class="message message-sent">{{message.text}}</div>
+                    </div>
+                </main>
                 <footer class="d-flex">
                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                     <input type="text" placeholder="Scrivi un messaggio...">

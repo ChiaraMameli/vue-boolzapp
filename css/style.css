@@ -2,6 +2,7 @@
 :root {
     /* colours */
     --green: #409689;
+    --acid-gren: #D5F9BA;
     --darker-grey: #757985;
     --dark-grey: #B1B1B1;
     --grey: #DCDBD3;
@@ -70,7 +71,6 @@ ul {
     width: 3rem;
     border-radius: 50%;
     background-color: #fff;
-
     margin-right: var(--smallest);
 }
 
@@ -148,11 +148,31 @@ ul {
     margin-right: var(--smallest);
 }
 
+
+/** RIGHT SECTION MAIN */
 main{
     height: calc(100% - 20vh);
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
+    padding: var(--smallest);
 }
+
+.message {
+    width: 40%;
+    min-height: 8vh;
+    padding: var(--smallest);
+    border-radius: var(--smallest);
+}
+
+.message-received{
+    background-color: #FFF;
+}
+
+.message-sent{
+    background-color: var(--acid-gren);
+    margin-left: 60%;
+}
+
 
 /** RIGHT SECTION FOOTER */
 
