@@ -21,14 +21,10 @@ ul {
 }
 
 /* LAYOUT (STRUCTURE) */
-#top-background {
-    height: 13vh;
-    background-color: var(--green);
-}
 
-#bottom-background {
-    height: 87vh;
-    background-color: var(--grey);
+body {
+    height: 100vh;
+    background-image: linear-gradient(var(--green) 13vh, var(--grey) 13vh);
 }
 
 #main-content{
