@@ -17,13 +17,17 @@
 <body class="position-relative">
     <div id="root">
         <div id="main-content" class="position-absolute top-50 start-50 translate-middle d-flex">
+
+<!-- SIDEBAR -->
             <section id="sidebar">
                 <header class="d-flex justify-content-between">
-                    <div>
+
+<!-- USER CARD -->
+                    <div class="contact-card">
                         <figure class="d-flex">
-                            <img :src="user.profilePic" alt="user profile pic" class="rounded-pic">
+                            <img :src=`img/avatar${user.avatar}.jpg` alt="user profile pic" class="rounded-pic">
                             <figcaption>
-                                <h3>{{user.firstName}} {{user.lastName}}</h3>
+                                <h3>{{user.name}}</h3>
                             </figcaption>
                         </figure>
                     </div>
@@ -32,9 +36,9 @@
                         <a href="#"><i class="fa-solid fa-message"></i></a>
                         <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
-
                 </header>
 
+<!-- NOTIFICATIONS -->
                 <div id="notifications" class="d-flex">
                     <div class="rounded-icon text-center">
                         <i class="fa-solid fa-bell-slash"></i>
@@ -45,35 +49,39 @@
                     </div>
                 </div>
 
+<!-- SEARCH CONTACTS -->
                 <section>
                     <div id="search-my-contacts" class="d-flex">
                         <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                         <input id="search" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
-                    <div id="my-contacts-list-box">
-                        <ul>
-                            <li v-for="contact in contacts">
+<!-- CONTACTS LIST -->
+                    <div id="my-contacts-list-box" class="overflow-auto">
+                        <ul class="contact-card">
+                            <li v-for="contact in contacts" @click="hasBeenSelected(contact)" >
                                 <figure class="d-flex">
-                                    <img :src="contact.profilePic" alt="contact.name" class="rounded-pic">
+                                    <img :src=`img/avatar${contact.avatar}.jpg` alt="contact.name" class="rounded-pic">
                                     <figcaption>
                                         <h3>{{contact.name}}</h3>
                                     </figcaption>
                                 </figure>
                             </li>
                         </ul>
-
                     </div>
                 </section>
             </section>
+
+<!-- RIGHT SECTION -->
             <section id="right-section">
                 <header class="d-flex justify-content-between">
-                    <div>
-                        <figure class="d-flex">
-                            <img src="img/avatar_1.jpg" alt="user profile pic" class="rounded-pic">
+
+<!-- SELECTED CONTACT SECTION -->
+                    <div class="contact-card">
+                        <figure v-for="contact in contacts" class="d-flex">
+                            <img v-if="contact.visible" :src=`img/avatar${contact.avatar}.jpg` alt="user profile pic" class="rounded-pic">
                             <figcaption>
-                                <h3>Ciccio</h3>
-                                <span>ciao</span>
+                                <h3 v-if="contact.visible">{{contact.name}}</h3>
                             </figcaption>
                         </figure>
                     </div>
@@ -83,13 +91,20 @@
                         <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </header>
-                <main>
 
-                    <div v-for="message in messages">
-                        <div v-if="(!message.send)" class="message message-received">{{message.text}}</div>
-                        <div v-else class="message message-sent">{{message.text}}</div>
+<!-- MESSAGES -->
+                <main class="overflow-auto">
+                    <div v-for="contact in contacts">
+                        <div v-if="contact.visible">
+                            <div v-for="message in contact.messages">
+                                <div v-if="(message.status === 'received')" class="message message-received">{{message.text}}</div>
+                                <div v-else class="message message-sent">{{message.text}}</div>
+                            </div>
+                        </div>
                     </div>
                 </main>
+
+<!-- TYPE SECTION -->
                 <footer class="d-flex">
                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                     <input type="text" placeholder="Scrivi un messaggio...">

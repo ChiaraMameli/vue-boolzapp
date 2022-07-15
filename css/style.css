@@ -95,7 +95,6 @@ body {
 #my-contacts-list-box {
     height: 65vh;
     background-color: #FFF;
-    overflow-y: scroll;
 }
 
 /* RIGHT SECTION */
@@ -114,28 +113,6 @@ body {
 
 /** RIGHT SECTION HEADER */
 
-#right-section figure,
-#sidebar figure {
-    padding: 0.5rem;
-}
-
-#right-section figcaption,
-#sidebar figcaption {
-    margin-left: var(--smallest);
-    padding-top: var(--smallest) ;
-}
-
-
-#right-section figcaption h3,
-#sidebar figcaption h3 {
-    font-size: var(--smallest);
-    margin: 0;
-}
-
-#right-section figcaption span {
-    color: var(--dark-grey);
-}
-
 #right-section header i,
 #sidebar header i {
     color: var(--dark-grey);
@@ -149,7 +126,6 @@ body {
 main{
     height: calc(100% - 20vh);
     background-image: url("../img/mine.jpg");
-    overflow-y: scroll;
     padding: var(--smallest);
 }
 
@@ -193,6 +169,24 @@ main{
 }
 
 /* CONTACTS GENERIC FEATURES */
+
+.contact-card figcaption h3 {
+    font-size: var(--smallest);
+    margin: 0;
+}
+
+.contact-card figure {
+    padding: 0.5rem;
+}
+
+.contact-card figcaption {
+    margin-left: var(--smallest);
+    padding-top: var(--smallest) ;
+}
+
+.contact-card figcaption span {
+    color: var(--dark-grey);
+}
 
 .rounded-pic {
     height: 8vh;
