@@ -59,7 +59,7 @@
 <!-- CONTACTS LIST -->
                     <div id="my-contacts-list-box" class="overflow-auto">
                         <ul class="contact-card">
-                            <li v-for="contact in contacts" @click="hasBeenSelected(contact)" >
+                            <li v-for="(contact, i) in contacts" @click="hasBeenSelected(contact, i)">
                                 <figure class="d-flex">
                                     <img :src=`img/avatar${contact.avatar}.jpg` alt="contact.name" class="rounded-pic">
                                     <figcaption>
@@ -78,10 +78,10 @@
 
 <!-- SELECTED CONTACT SECTION -->
                     <div class="contact-card">
-                        <figure v-for="contact in contacts" class="d-flex">
-                            <img v-if="contact.visible" :src=`img/avatar${contact.avatar}.jpg` alt="user profile pic" class="rounded-pic">
+                        <figure class="d-flex">
+                            <img :src=`img/avatar${contacts[currentIndex].avatar}.jpg` alt="user profile pic" class="rounded-pic">
                             <figcaption>
-                                <h3 v-if="contact.visible">{{contact.name}}</h3>
+                                <h3>{{contacts[currentIndex].name}}</h3>
                             </figcaption>
                         </figure>
                     </div>
@@ -94,20 +94,16 @@
 
 <!-- MESSAGES -->
                 <main class="overflow-auto">
-                    <div v-for="contact in contacts">
-                        <div v-if="contact.visible">
-                            <div v-for="message in contact.messages">
-                                <div v-if="(message.status === 'received')" class="message message-received">{{message.text}}</div>
-                                <div v-else class="message message-sent">{{message.text}}</div>
-                            </div>
-                        </div>
+                    <div v-for="message in contacts[currentIndex].messages">
+                        <div v-if="(message.status === 'received')" class="message message-received">{{message.text}}</div>
+                        <div v-else class="message message-sent">{{message.text}}</div>
                     </div>
                 </main>
 
 <!-- TYPE SECTION -->
                 <footer class="d-flex">
                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
-                    <input type="text" placeholder="Scrivi un messaggio...">
+                    <input v-model="newMessage" @keyup.enter="sendMessage(currentIndex)" type="text" placeholder="Scrivi un messaggio...">
                     <a href="#"><i class="fa-solid fa-microphone"></i></a>
                 </footer>
             </section>

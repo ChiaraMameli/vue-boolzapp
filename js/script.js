@@ -1,6 +1,9 @@
 const root = new Vue({
     el:'#root',
     data: {
+        currentIndex: 0,
+        newMessage: '',
+        answerMessage: '',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -89,9 +92,28 @@ const root = new Vue({
           ]
     },
     methods: {
-        hasBeenSelected(who) {
-            who.visible = true
+        hasBeenSelected(who, index) {
+            who.visible = true;
+            this.currentIndex = index;
+        },
+        answerIn3Seconds(){
+            const answerMessage = {text: 'ok', status: 'received'};
+            setTimeout(i => {
+                this.contacts[i].messages.push(newMessage);
+            })
+        },
+        getAnswer() {
+            setTimeout((currentIndex) => {
+                const answerMessage = {text: 'ok', status: 'received'};
+                this.contacts[this.currentIndex].messages.push(answerMessage);
+            },1000)
+        },
+        sendMessage(i) {
+            const newMessage = {text: this.newMessage, status: 'sent'}
+            this.contacts[i].messages.push(newMessage);
+            this.newMessage = '';
+
+            this.getAnswer()
         }
     }
-
 })
