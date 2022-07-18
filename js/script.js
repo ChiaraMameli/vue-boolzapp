@@ -97,12 +97,12 @@ const root = new Vue({
         },
         getAnswer() {
             setTimeout((currentIndex) => {
-                const answerMessage = {date: '10/01/2020 15:50:00', text: 'ok', status: 'received'};
+                const answerMessage = {date: dayjs().format('DD/MM/YYYY HH:MM:ss'), text: 'ok', status: 'received'};
                 this.contacts[this.currentIndex].messages.push(answerMessage);
             },1000)
         },
         sendMessage(i) {
-            const newMessage = {date: '10/01/2020 15:50:00', text: this.newMessage, status: 'sent'}
+            const newMessage = {date: dayjs().format('DD/MM/YYYY HH:MM:ss'), text: this.newMessage, status: 'sent'}
             this.contacts[i].messages.push(newMessage);
             this.newMessage = '';
 
