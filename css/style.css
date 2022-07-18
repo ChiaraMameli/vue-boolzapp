@@ -2,7 +2,7 @@
 :root {
     /* colours */
     --green: #409689;
-    --acid-gren: #D5F9BA;
+    --acid-green: #D5F9BA;
     --darker-grey: #757985;
     --dark-grey: #B1B1B1;
     --grey: #DCDBD3;
@@ -133,22 +133,60 @@ main{
 #message-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .message {
-    width: 40%;
-    min-height: 8vh;
-    padding: var(--smallest);
-    border-radius: var(--smallest);
+    padding: 0.6rem;
+    border-radius: 0.8rem;
+    margin: 0.4rem;
+    position: relative;
 }
 
 .received{
     background-color: #FFF;
+    align-self: flex-start;
 }
 
 .sent{
-    background-color: var(--acid-gren);
-    justify-content: flex-end;
+    background-color: var(--acid-green);
+    align-self: flex-end;
+}
+  
+.sent::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
+    border-top: 10px solid #ccc;
+}
+  
+.sent::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid var(--acid-green);
+    clear: both;
+}
+
+.received::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -10px;
+    border-top: 10px solid #ccc;
+}
+  
+.received::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -8px;
+    border: 10px solid transparent;
+    border-top: 10px solid #FFF;
+    clear: both;
 }
 
 .time {

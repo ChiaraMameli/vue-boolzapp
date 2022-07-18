@@ -97,8 +97,8 @@
 
 <!-- MESSAGES -->
                 <main class="overflow-auto">
-                    <ul id="message-container" v-for="message in contacts[currentIndex].messages">
-                        <li :class="['message', message.status]">{{message.text}}
+                    <ul id="message-container">
+                        <li v-for="message in contacts[currentIndex].messages" :class="['message', 'right', message.status]">{{message.text}}
                             <div class="time">{{message.date}}</div>
                         </li>
                     </ul>
