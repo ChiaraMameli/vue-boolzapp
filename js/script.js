@@ -115,6 +115,11 @@ const root = new Vue({
           this.contacts.forEach((contact, i) => {
             const cName = contact.name.toLowerCase()
             if(!(cName.includes(value))) this.contacts.splice(i, 1)
-          })}
+          })},
+
+        deleteMessage(i){
+          const messages = this.contacts[this.currentIndex].messages;
+          messages.splice(i, 1)
+          }
     }
 })

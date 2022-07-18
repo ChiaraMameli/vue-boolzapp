@@ -127,7 +127,6 @@ main{
     height: calc(100% - 20vh);
     background-image: url("../img/mine.jpg");
     padding: var(--smallest);
-
 }
 
 #message-container {
@@ -141,6 +140,7 @@ main{
     border-radius: 0.8rem;
     margin: 0.4rem;
     position: relative;
+    width: fit-content;
 }
 
 .received{
@@ -152,7 +152,22 @@ main{
     background-color: var(--acid-green);
     align-self: flex-end;
 }
-  
+
+.time {
+    text-align: end;
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+}
+
+#message-container button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+/** CLOUD SHAPE */
 .sent::before {
     content: '';
     position: absolute;
@@ -187,12 +202,6 @@ main{
     border: 10px solid transparent;
     border-top: 10px solid #FFF;
     clear: both;
-}
-
-.time {
-    text-align: end;
-    font-size: 0.8rem;
-    color: var(--dark-grey);
 }
 
 /** RIGHT SECTION FOOTER */
