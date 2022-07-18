@@ -107,6 +107,13 @@ const root = new Vue({
             this.newMessage = '';
 
             this.getAnswer()
-        }
+        },
+        getContact(event){
+          const value = event.target.value.toLowerCase()
+          console.log(value)
+
+          this.contacts.forEach((contact, i) => {
+            const cName = contact.name.toLowerCase()
+            if(!(cName.includes(value))) this.contacts.splice(i, 1)})}
     }
 })
