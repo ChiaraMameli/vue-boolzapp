@@ -94,9 +94,10 @@
 
 <!-- MESSAGES -->
                 <main class="overflow-auto">
-                    <div v-for="message in contacts[currentIndex].messages">
-                        <div v-if="(message.status === 'received')" class="message message-received">{{message.text}}</div>
-                        <div v-else class="message message-sent">{{message.text}}</div>
+                    <div id="message-container" v-for="message in contacts[currentIndex].messages">
+                        <div :class="['message', message.status]">{{message.text}}
+                            <div class="time">{{message.date}}</div>
+                        </div>
                     </div>
                 </main>
 

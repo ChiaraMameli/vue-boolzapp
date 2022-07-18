@@ -127,6 +127,12 @@ main{
     height: calc(100% - 20vh);
     background-image: url("../img/mine.jpg");
     padding: var(--smallest);
+
+}
+
+#message-container {
+    width: 100%;
+    display: flex;
 }
 
 .message {
@@ -136,15 +142,20 @@ main{
     border-radius: var(--smallest);
 }
 
-.message-received{
+.received{
     background-color: #FFF;
 }
 
-.message-sent{
+.sent{
     background-color: var(--acid-gren);
-    margin-left: 60%;
+    justify-content: flex-end;
 }
 
+.time {
+    text-align: end;
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+}
 
 /** RIGHT SECTION FOOTER */
 

@@ -12,7 +12,7 @@ const root = new Vue({
             {
               name: 'Michele',
               avatar: '_1',
-              visible: false,
+              visible: true,
               messages: [{
                 date: '10/01/2020 15:30:55',
                 text: 'Hai portato a spasso il cane?',
@@ -33,7 +33,7 @@ const root = new Vue({
             {
               name: 'Fabio',
               avatar: '_2',
-              visible: false,
+              visible: true,
               messages: [{
                 date: '20/03/2020 16:30:00',
                 text: 'Ciao come stai?',
@@ -54,7 +54,7 @@ const root = new Vue({
             {
               name: 'Samuele',
               avatar: '_3',
-              visible: false,
+              visible: true,
               messages: [{
                 date: '28/03/2020 10:10:40',
                 text: 'La Marianna va in campagna',
@@ -75,7 +75,7 @@ const root = new Vue({
             {
               name: 'Luisa',
               avatar: '_4',
-              visible: false,
+              visible: true,
               messages: [
                 {
                 date: '10/01/2020 15:30:55',
@@ -93,23 +93,16 @@ const root = new Vue({
     },
     methods: {
         hasBeenSelected(who, index) {
-            who.visible = true;
             this.currentIndex = index;
-        },
-        answerIn3Seconds(){
-            const answerMessage = {text: 'ok', status: 'received'};
-            setTimeout(i => {
-                this.contacts[i].messages.push(newMessage);
-            })
         },
         getAnswer() {
             setTimeout((currentIndex) => {
-                const answerMessage = {text: 'ok', status: 'received'};
+                const answerMessage = {date: '10/01/2020 15:50:00', text: 'ok', status: 'received'};
                 this.contacts[this.currentIndex].messages.push(answerMessage);
             },1000)
         },
         sendMessage(i) {
-            const newMessage = {text: this.newMessage, status: 'sent'}
+            const newMessage = {date: '10/01/2020 15:50:00', text: this.newMessage, status: 'sent'}
             this.contacts[i].messages.push(newMessage);
             this.newMessage = '';
 
