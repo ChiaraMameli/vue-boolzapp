@@ -52,14 +52,14 @@
                     </div>
                 </div>
 
-<!-- SEARCH CONTACTS -->
+                <!-- SEARCH CONTACTS -->
                 <section>
                     <div id="search-my-contacts" class="d-flex">
                         <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
                         <input id="search" type="search" placeholder="Cerca o inizia una nuova chat" @input="getContact">
                     </div>
 
-<!-- CONTACTS LIST -->
+                    <!-- CONTACTS LIST -->
                     <div id="my-contacts-list-box" class="overflow-auto">
                         <ul class="contact-card">
                             <li v-for="(contact, i) in contacts" @click="hasBeenSelected(contact, i)">
@@ -72,14 +72,15 @@
                             </li>
                         </ul>
                     </div>
+                    
                 </section>
             </section>
 
-<!-- RIGHT SECTION -->
+            <!-- RIGHT SECTION -->
             <section id="right-section">
                 <header class="d-flex justify-content-between">
 
-<!-- SELECTED CONTACT SECTION -->
+                    <!-- SELECTED CONTACT SECTION -->
                     <div class="contact-card">
                         <figure class="d-flex">
                             <img :src=`img/avatar${contacts[currentIndex].avatar}.jpg` alt="user profile pic" class="rounded-pic">
@@ -95,7 +96,7 @@
                     </div>
                 </header>
 
-<!-- MESSAGES -->
+                <!-- MESSAGES -->
                 <main class="overflow-auto">
                     <ul id="message-container">
                         <li v-for="(message, i) in contacts[currentIndex].messages" :class="['message', 'right', message.status]">
@@ -113,7 +114,7 @@
                     </ul>
                 </main>
 
-<!-- TYPE SECTION -->
+                <!-- TYPE SECTION -->
                 <footer class="d-flex">
                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                     <input v-model="newMessage" @keyup.enter="sendMessage(currentIndex)" type="text" placeholder="Scrivi un messaggio...">
